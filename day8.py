@@ -52,7 +52,7 @@ for ind, tree in enumerate(trees):
             ]
 
             # the below logic is slightly confusing, essentially get the first element of the list if the list exists
-            # else get the index of the tree (if it's at the edge this will be 0 otherwise it will be the rest of the trees)
+            # else if the tree is on the edge it will be 0, othewise there is no other tree i.e. >= the height of the current tree
             left_score = index if not left_score else left_score[0] + 1
             right_score = (
                 (len(tree) - 1) - index if not right_score else right_score[0] + 1
